@@ -1,0 +1,2 @@
+# Ignores any file ending in .orkey in the main folder or any subfolder
+**/*.orkey.txt
