@@ -7,18 +7,15 @@
 Agent::Agent(const IndexBase& index)
     :m_index(index), termsFile(""), summarizeFile(""), tokens(*create_tokenizer())
 {
-    // TODO: implement
 }
 
 Agent::~Agent()
 {
-    // TODO: implement
     delete &tokens;
 }
 
 bool Agent::load_prompts(const std::string& terms_file, const std::string& summarize_file)
 {
-	// TODO: replace this line with your implementation
     std::ifstream t(terms_file);
     std::ifstream s(summarize_file);
     if(!t || !s)
@@ -32,7 +29,6 @@ bool Agent::load_prompts(const std::string& terms_file, const std::string& summa
 
 bool Agent::query(const std::string& question, std::string& answer)
 {
-	// TODO: replace this line with your implementation
     std::ifstream infile(termsFile);    // infile is a name of our choosing
     if ( ! infile )                // Did opening the file fail?
     {

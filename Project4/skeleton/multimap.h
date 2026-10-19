@@ -28,13 +28,11 @@ public:
     class Iterator : public MultimapBase::IteratorBase
     {
     public:
-		// TODO: declare at least one constructor
         Iterator(Node* c, const std::string& k);
         virtual ~Iterator();
         virtual bool next(std::string& value);
 
     private:
-        // TODO: add private members
         Node* current;
         std::string key;
     };
@@ -47,7 +45,6 @@ public:
     virtual int size() const;
 
 private:
-    // TODO: add private members
     Node* root;
     int treeSize;
     

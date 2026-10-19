@@ -1,11 +1,9 @@
 #include "multimap.h"
 #include <string>
 
-// TODO: implement at least one constructor
 Multimap::Iterator::Iterator(Node* c, const std::string& k)
     :current(c), key(k)
 {
-//    // TODO: implement
 }
 
 Multimap::Iterator::~Iterator()
@@ -50,18 +48,15 @@ bool Multimap::Iterator::next(std::string& value)
 Multimap::Multimap()
     :root(nullptr), treeSize(0)
 {
-    // TODO: implement
 }
 
 Multimap::~Multimap()
 {
-    // TODO: implement
     clearTree(root);
 }
 
 void Multimap::put(const std::string& key, const std::string& value)
 {
-    // TODO: implement
     if(root == nullptr)
     {
         root = new Node(key, value);
@@ -108,12 +103,8 @@ void Multimap::put(const std::string& key, const std::string& value)
 
 MultimapBase::IteratorBase* Multimap::get(const std::string& key) const
 {
-	// TODO: replace this line with your implementation
     Node* cur = root;
-    if(cur == nullptr)
-    {
-        return new Iterator(nullptr, key);
-    }
+    Node* first = nullptr;
     while(cur != nullptr)
     {
         if(key < cur->term)
@@ -126,20 +117,16 @@ MultimapBase::IteratorBase* Multimap::get(const std::string& key) const
         }
         else
         {
-            while(cur->left != nullptr && cur->left->term == key)
-            {
-                cur = cur->left;
-            }
-            return new Iterator(cur, key);
+            first = cur;
+            cur = cur->left;
         }
         
     }
-    return new Iterator(nullptr, key);
+    return new Iterator(first, key);
 }
 
 bool Multimap::empty() const
 {
-	// TODO: replace this line with your implementation
     if(root == nullptr)
     {
         return true;
@@ -149,7 +136,6 @@ bool Multimap::empty() const
 
 int Multimap::size() const
 {
-	// TODO: replace this line with your implementation
     return treeSize;
 }
 

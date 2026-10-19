@@ -19,7 +19,6 @@ private:
     std::string termsFile;
     std::string summarizeFile;
     TokenizerBase& tokens;
-    // TODO: add additional private members
 };
 
 #endif // AGENT_H

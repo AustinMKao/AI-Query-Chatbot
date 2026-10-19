@@ -13,7 +13,6 @@ public:
     virtual bool next(std::string& token);
 
 private:
-    // TODO: add private members
     std::string tokens;
     int position;
 };

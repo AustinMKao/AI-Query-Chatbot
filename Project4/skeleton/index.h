@@ -20,7 +20,6 @@ public:
     virtual std::vector<std::string> query(const std::vector<std::string>& terms) const;
 
 private:
-    // TODO: add private members
     TokenizerBase* tokens;
     MultimapBase* multi;
 };

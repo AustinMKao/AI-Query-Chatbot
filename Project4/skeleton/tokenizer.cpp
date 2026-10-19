@@ -17,18 +17,14 @@ void Tokenizer::tokenize(const std::string& input)
 bool Tokenizer::next(std::string& token)
 {
     token = "";
-    while(position < tokens.size() && isalpha(static_cast<unsigned char>(tokens[position])) == false && isdigit(static_cast<unsigned char>(tokens[position])) == false)
+    while(position < tokens.size() && !isalnum(static_cast<unsigned char>(tokens[position])))
     {
         position++;
     }
-    while(position < tokens.size() && (isalpha(static_cast<unsigned char>(tokens[position])) == true || isdigit(static_cast<unsigned char>(tokens[position]))))
+    while(position < tokens.size() && isalnum(static_cast<unsigned char>(tokens[position])))
     {
         token += tokens.at(position);
         position++;
     }
-    if(token.empty() == true)
-    {
-        return false;
-    }
-    return true;
+    return !token.empty();
 }

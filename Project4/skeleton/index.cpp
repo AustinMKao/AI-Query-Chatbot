@@ -5,19 +5,16 @@
 Index::Index()
     :tokens(create_tokenizer()), multi(create_multimap())
 {
-    // TODO: implement
 }
 
 Index::~Index()
 {
-    // TODO: implement
     delete tokens;
     delete multi;
 }
 
 int Index::build_index(const std::string& path)
 {
-	// TODO: replace this line with your implementation
     std::vector<std::string> files = get_filenames(path);
     int count = 0;
     for(int i = 0; i < files.size(); i++)
@@ -30,7 +27,6 @@ int Index::build_index(const std::string& path)
 
 void Index::add_doc(const std::string& doc_file)
 {
-    // TODO: implement
     std::ifstream infile(doc_file);    // infile is a name of our choosing
     if ( ! infile )                // Did opening the file fail?
     {
@@ -53,7 +49,6 @@ void Index::add_doc(const std::string& doc_file)
 
 std::vector<std::string> Index::query(const std::vector<std::string>& terms) const
 {
-	// TODO: replace this line with your implementation
     if(terms.empty() == true)
     {
         return {};
